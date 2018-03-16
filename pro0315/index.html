@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>本地存储</title>
+	<style type="text/css">
+	#content{
+		width: 400px;
+		margin:0 auto;
+		background: #ccc;
+		text-align: center;
+	}
+	label{
+		display:block;
+	}
+	#content input{
+		width: 60%;
+		height: 38px;
+		outline: none;
+		margin:12px 0;
+		padding:0 8px;
+	}
+	button{
+		width: 60%;
+		height: 38px;
+		display: block;
+		margin:0 auto;
+	}
+	#content input[name='checkbox']{
+		height: 25px;
+		width: 25px;
+	}
+	span{
+		margin:12px 0;
+		display: inline-block;
+		float: right;
+		margin-right: 100px;
+	}
+	</style>
+</head>
+<body>
+<div id="content" >
+	<form method="get">
+		<label>用户名：<input type="text" name="username" placeholder="请输入用户名"></label>
+		<label>密码：<input type="password" name="psd"></label>
+		<input type="checkbox" name="checkbox" checked="checked"><span>记住密码？</span>
+		<button id="btn" type="button">登录</button>
+	</form>
+</div>
+<script type="text/javascript">
+window.onload = function(){
+	var value;
+	document.getElementById("btn").onclick = function get(){
+		var username =  document.querySelector("input[name='username']").value;
+		var psd = document.querySelector("input[name='psd']").value;
+		//console.log(username);
+		localStorage.setItem("username",username);
+		localStorage.setItem("psd",psd);
+	}
+	console.log(localStorage.getItem("username"))
+	console.log(localStorage.getItem("psd"))
+	document.querySelector("input[name='username']").value =localStorage.getItem("username");
+	// var check = document.querySelector("input[name='checkbox']");
+	// var checked = check.getAttribute("checked");
+	// check.addEventListener("click",function(){
+	// 	//console.log(checked);
+	// })
+	// if(check !== -1){
+	// 	console.log("check");
+	// }
+}
+
+</script>
+</body>
+</html>

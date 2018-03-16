@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script type="text/javascript">
+	var product = {
+		pro1:{'name':'西瓜','price':'15'},
+		pro2:{'name':'橘子','price':'6'},
+		pro3:{'name':'苹果','price':'8'},
+		pro4:{'name':'猕猴桃','price':'16'},
+		pro5:{'name':'火龙果','price':'10'},
+		pro6:{'name':'菠萝','price':'12'}
+	}
+	localStorage.setItem("pro",JSON.stringify(product));
+	console.log(localStorage.getItem("pro"));
+</script>
+</body>
+</html>

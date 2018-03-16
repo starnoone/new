@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+/*function setCookie(key,val){
+	document.cookie = key + "=" + escape(val);
+}
+setCookie("name","张三");
+setCookie("psd","123456");*/
+function get(e){
+	var str = document.cookie;
+	//console.log(str);
+	var temp = str.split(";");
+	//console.log(temp);
+	var arr = [];
+	temp.map(function(val, index) {
+		arr.push(val.split("="));
+	})
+	//console.log(arr[0]);
+	arr.map(function(val2, index2) {
+		for(var i=0;i<val2.length;i++){
+			//console.log(val2[i]);
+			if(e == val2[i]){
+				console.log(unescape(val2[i]));
+			}
+		}
+	})
+}
+get("name");
+
+</script>
+</body>
+</html>
