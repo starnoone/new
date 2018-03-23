@@ -133,6 +133,6 @@ $(function(){
 
 		//点击确定弹出信息
 		$("#send").click(function(){
-			console.log(goods[goodsIndex]);
+			alert(JSON.stringify(goods[goodsIndex]));
 		})
 })
