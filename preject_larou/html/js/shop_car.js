@@ -1,4 +1,16 @@
 $(function(){
+
+	//加入购物车
+	$("a.add").bind('click', function() {
+		$(".footer").css("display","none");
+		$(".addCar").css("display","block");
+	});
+	//关闭
+	$(".close").bind('click', function() {
+		$(".addCar").css("display","none");
+		$(".footer").css("display","block");
+	});
+
 		//console.log("data");
 		var goods;
 		var goodsIndex = 0;
@@ -26,6 +38,7 @@ $(function(){
 					arr.name.push(goods[i].att_name.split("|")[0]);
 					arr.weid.push(goods[i].att_name.split("|")[1])
 				}
+				//去重
 				$.unique(arr.name);
 				$.unique(arr.weid);
 				//console.log(arr.name);
@@ -118,16 +131,8 @@ $(function(){
 			})
 		})
 
-
-
-
 		//点击确定弹出信息
 		$("#send").click(function(){
 			console.log(goods[goodsIndex]);
 		})
-
-
-
-
-
 })
