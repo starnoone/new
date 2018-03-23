@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>qq音乐接口查询</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+	}
+	body{background: #eee;}
+	.form{margin-top:20px;text-align: center;}
+	.form input{
+		width: 250px;
+		height: 44px;
+		border: none;
+		background: #fff;
+		outline: none;
+		padding: 0 10px;
+	}
+	#search{
+		width: 44px;
+		height: 44px;
+		border:none;
+		outline: none;
+		background: #ccc;
+		cursor: pointer;
+	}
+	.music-list{
+		width: 400px;
+		margin:0 auto;
+		margin-top:10px;
+		background: #fff;
+		padding:0 10px;
+	}
+	.music-list ul{
+		list-style: none;
+	}
+	.music-list ul li{
+		height:44px;
+		line-height: 44px;
+		border-bottom: 1px solid #ccc;
+		cursor: pointer;
+		overflow: hidden;
+		color:#333;
+	}
+	.music-list ul li img{
+		vertical-align: middle;
+		margin-right: 4px;
+	}
+	</style>
+</head>
+<body>
+<div class="form">
+	<input type="text" placeholder="搜索歌曲或歌手" name="">
+	<button id="search">搜索</button>
+</div>
+<div class="music-list">
+	
+</div>
+
+<script type="text/javascript" src="../lib/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#search").click(function(){
+		//重置div内容
+		$(".music-list").html("");
+		//获取input的value值
+		var keywords = $(".form input").val();
+
+		var api = "https://c.y.qq.com/soso/fcgi-bin/search_for_qq_cp?g_tk=1928093487&inCharset=utf-8&outCharset=utf-8&notice=0&format=jsonp&p=1&perpage=20&n=20&catZhida=1&zhidaqu=1&t=0&flag=1&ie=utf-8&sem=1&aggr=0&remoteplace=txt.mqq.all&uin=0&needNewCode=1&platform=h5&w=" + keywords;
+		//定义字符串接收变量
+		var str = "<ul>";
+		//ajax请求
+		$.ajax({
+			url:api,
+			type:"get",
+			dataType:"jsonp",
+			jsonp:"jsonpCallback",
+			jsonpCallback:"__jp1",
+			success:function(data){
+				var musicList = data.data.song.list;
+				for(var i=0;i<musicList.length;i++){
+					//console.log(musicList[i]);
+					//拼接变量
+					str += "<li><img src='images/icon-music-note.png' />"+musicList[i].songname+"-"+musicList[i].albumname+"</li>"
+				}
+				str += "</ul>";
+				$(".music-list").append(str);
+			}
+		})
+	})
+})
+</script>
+</body>
+</html>

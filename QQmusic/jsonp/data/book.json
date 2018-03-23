@@ -1,0 +1,46 @@
+{
+	"code":"0",
+	"bookData":[
+		{
+			"name":"《飘》",
+			"countries":"[美]",
+			"arthor":"玛格丽特·米切尔",
+			"year":"2000-9",
+			"price":"40.00元",
+			"cover":"https://img1.doubanio.com/lpic/s1078958.jpg"
+		},
+		{
+			"name":"《傲慢与偏见》",
+			"countries":"[英]",
+			"arthor":"奥斯丁",
+			"year":"1997-7",
+			"price":"13.00元",
+			"cover":"https://img3.doubanio.com/lpic/s4250062.jpg"
+		},
+		{
+			"name":"《荆棘鸟》",
+			"countries":"[澳]",
+			"arthor":"考琳·麦卡洛",
+			"year":"1998.7",
+			"price":"28.00元",
+			"cover":"https://img3.doubanio.com/lpic/s2781615.jpg"
+		},
+		{
+			"name":"《百年孤独》",
+			"countries":"[哥伦比亚]",
+			"arthor":"加西亚·马尔克斯 ",
+			"year":"2011-7",
+			"price":"39.50元",
+			"cover":"https://img3.doubanio.com/lpic/s6384944.jpg"
+		},
+		{
+			"name":"《简爱》",
+			"countries":"[英]",
+			"arthor":"夏洛蒂·勃朗特",
+			"year":"2003-11",
+			"price":"18.00元",
+			"cover":"https://img3.doubanio.com/lpic/s5924326.jpg"
+		}
+
+	]
+}

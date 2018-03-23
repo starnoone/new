@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	.book-list ul{list-style: none;}
+	.book-list ul li{height: 44px;line-height:44px;margin:10px 0;border-bottom: 1px solid #eee;}
+	.book-list ul li img{height:40px;vertical-align: middle;}
+	</style>
+</head>
+<body>
+<button id="send">获取列表</button>
+<div class="book-list"></div>
+<script type="text/javascript" src="../lib/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+$(function(){
+	var str = "<ul>"
+	$("#send").click(function(){
+		//console.log(10001)
+		$.ajax({
+			url:"data/book.json",
+			type:"get",
+			success:function(data){
+				//console.log(data);
+				var temp = data.bookData;
+				for(var i=0;i<temp.length;i++){
+					str += "<li><img src='"+temp[i].cover+"' />"+temp[i].name+"/"+temp[i].countries+"/"+temp[i].arthor+"/"+temp[i].year+"/"+temp[i].price+"</li>";
+				}
+				str += "</ul>";
+				$(".book-list").append(str);
+				console.log(str);
+			}
+		})
+	})
+})
+</script>
+</body>
+</html>
