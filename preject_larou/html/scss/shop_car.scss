@@ -1,0 +1,91 @@
+*{margin:0;padding:0}
+.main{
+	width:100%;
+	height:1000px;
+	background:#ccc;
+	.addCar{
+		font-size:0;
+		position:fixed;
+		width:100%;
+		left:0px;
+		bottom:0px;
+		background:#fff;
+		.header{
+			width:100%;
+			position:relative;
+			min-height:80px;
+			.pic{
+				width:100px;
+				height:100px;
+				background:#ff0000;
+				display:inline-block;
+				position: absolute;
+				top:-20px;
+				left:0;
+				img{
+					width:100%;
+					height:100%;
+				}
+			}
+			.info{
+				width:calc(100vw - 110px);
+				display:inline-block;
+				float:right;
+				h1{
+					font-size:18px;
+					color:#333;
+				}
+				p{
+					font-size:16px;
+					color:#333;
+					span{
+						color:#ff0000;
+					}
+				}
+			}
+		}
+		
+		.attr{
+			width:100%;
+			h2{
+				font-size:14px;
+				color:#333;
+				padding-left:10px;
+				height:30px;
+				line-height:30px;
+				font-weight:normal;
+			}
+			ul{
+				list-style:normal;
+				li{
+					font-size:14px;
+					color:#333;
+					display:inline-block;
+					height:30px;
+					width:160px;
+					text-align:center;
+					line-height:30px;
+					border:1px solid #333;
+					border-radius:5px;
+					margin:8px 10px;
+					&.on{
+						background:#dfd6f5;
+
+					}
+				}
+			}
+		}
+		.taste{
+		@extend .attr;
+		}
+		#send{
+		width:100%;
+		background:#ff0000;
+		height:44px;
+		line-height:44px;
+		border:none;
+		color:#fff;
+		font-size:16px;
+		}
+	}
+}
